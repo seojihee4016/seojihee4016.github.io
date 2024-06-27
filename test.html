@@ -1,18 +1,34 @@
-			<div class="formGroup">
-				<div class="table_box rowBorder">
-					<table>
-						<tr>
-							<th><img src="//static.metamarketing.co.kr/label/name_01.png"></th> 
-							<td><input type="text" name="name" class="inp" required autocomplete="off"/></td>
-						</tr>
-						<tr>
-							<th><img src="//static.metamarketing.co.kr/label/age.png"></th> 
-							<td><input type="tel" name="age" class="inp" data-min="<?=$this->landing['check_age_min']?>" data-max="<?=$this->landing['check_age_max']?>" required autocomplete="off" maxlength="2"/></td>
-						</tr>
-						<tr>
-							<th><img src="//static.metamarketing.co.kr/label/phone_01.png"></th> 
-							<td><input type="tel" name="phone" class="inp" required autocomplete="off" maxlength="11"/></td>
-						</tr>
-					</table>
-				</div>
-			</div>
+
+<a href="/kakao/login"><img src="kakao_login-png"></a>
+
+<div class="formGroup">
+    <div class="table_box rowBorder">
+        <table>
+            <tr>
+                <th><img src="//static.metamarketing.co.kr/label/name_01.png"></th> 
+                <td><input type="text" name="name" class="inp" required autocomplete="off"/></td>
+            </tr>
+            <tr>
+                <th><img src="//static.metamarketing.co.kr/label/age.png"></th> 
+                <td><input type="tel" name="age" class="inp" data-min="<?=$this->landing['check_age_min']?>" data-max="<?=$this->landing['check_age_max']?>" required autocomplete="off" maxlength="2"/></td>
+            </tr>
+            <tr>
+                <th><img src="//static.metamarketing.co.kr/label/phone_01.png"></th> 
+                <td><input type="tel" name="phone" class="inp" required autocomplete="off" maxlength="11"/></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+    const kakaoData = {
+        client_id: '65295b9472b38097d11e3a81dd2b5983',
+        client_secret: 'kwHBQN8u6A93vNLbD1wqIlFctRHVvpz9' ,
+        redirect_uri: 'https://seojihee4016.github.io/hairSalonProject/signUp.html'
+    }
+        // 1. 인가 코드 받기 Authorization Code
+        router.get('/kakao/login',(req,res)=>{
+            const KakakatAuthorize = 'http://kauth.kakao.com/oauth/authorize?Client_id=${kakaoData.cLient_id}&redirect_uri=${kakaoData.redirect_uri}response_type=code'
+            res.redirect(kakaoAuthorize)
+    })
+</script>
