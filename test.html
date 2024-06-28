@@ -21,14 +21,18 @@
 </div>
 
 <script>
-    const kakaoData = {
-        client_id: '65295b9472b38097d11e3a81dd2b5983',
-        client_secret: 'kwHBQN8u6A93vNLbD1wqIlFctRHVvpz9' ,
-        redirect_uri: 'https://seojihee4016.github.io/hairSalonProject/signUp.html'
-    }
-        // 1. 인가 코드 받기 Authorization Code
-        router.get('/kakao/login',(req,res)=>{
-            const KakakatAuthorize = 'http://kauth.kakao.com/oauth/authorize?Client_id=${kakaoData.cLient_id}&redirect_uri=${kakaoData.redirect_uri}response_type=code'
-            res.redirect(kakaoAuthorize)
-    })
+	const kakaoData = {
+		client_id: '65295b9472b38097d11e3a81dd2b5983',
+		client_secret: 'kwHBQN8u6A93vNLbD1wqIlFctRHVvpz9',
+		redirect_uri: 'https://seojihee4016.github.io/hairSalonProject/signUp.html'
+	};
+
+	// Assuming you're using Express.js for the server-side
+	const express = require('express');
+	const app = express();
+
+	app.get('/kakao/login', (req, res) => {
+		const kakaoAuthorize = `http://kauth.kakao.com/oauth/authorize?client_id=65295b9472b38097d11e3a81dd2b5983&redirect_uri=https://seojihee4016.github.io/test.html&response_type=code`;
+		res.redirect(kakaoAuthorize);
+	});
 </script>
