@@ -23,7 +23,19 @@
     .description {margin-left: 1.25em;}
     .description h2 {margin: 0 0 0.313em 0; font-weight: 500; font-size: 2em;}
     .description p {margin: 0; font-weight: 400; font-size: 2em;}
-    @keyframes print {0% {transform: translateY(-50.875em);} 25% {transform: translateY(-31.875em);} 50% {transform: translateY(-24.688em);} 75% {transform: translateY(-8.75em);} 100% {transform: translateY(0);}}
+    @keyframes print {
+  0%   { transform: translateY(-52em); }
+  10%  { transform: translateY(-44em); }
+  20%  { transform: translateY(-36em); }
+  30%  { transform: translateY(-30em); }
+  40%  { transform: translateY(-24em); }
+  50%  { transform: translateY(-18em); }
+  60%  { transform: translateY(-12em); }
+  70%  { transform: translateY(-6em); }
+  80%  { transform: translateY(-3em); }
+  100% { transform: translateY(0); }
+}
+
     @media screen and (max-width: 768px) {body {font-size: 0.344em;}}
 
     .plane-icon {
