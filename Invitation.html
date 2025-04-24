@@ -12,7 +12,6 @@
     .receipt {padding: 3.5em 1.8em; text-align: left; min-height: 12.5em; width: 88%; background: #fff; border-radius: 0.625em 0.625em 1.25em 1.25em; box-shadow: 0.063em 0.188em 0.5em 0.188em rgba(0,0,0,0.2);}
     .airliner-logo {max-width: 5em;}
     .route {display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.875em;}
-    .plane-icon {width: 3em; height: 3em; transform: rotate(90deg);}
     .route h2 {font-weight: 300; font-size: 2.7em; font-weight: 500; margin: 0; text-align: center;}
     .details {display: grid; gap: 1em;}
     .item {display: flex; flex-direction: column; min-width: 4.375em;}
@@ -26,6 +25,18 @@
     .description p {margin: 0; font-weight: 400; font-size: 2em;}
     @keyframes print {0% {transform: translateY(-50.875em);} 25% {transform: translateY(-31.875em);} 50% {transform: translateY(-24.688em);} 75% {transform: translateY(-8.75em);} 100% {transform: translateY(0);}}
     @media screen and (max-width: 48em) {body {font-size: 0.344em;}}
+
+    .plane-icon {
+        width: 3em;
+        height: 3em;
+        transform: rotate(90deg);
+        animation: flyLeftRight 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes flyLeftRight {
+        0% { transform: translateX(-1.5em) rotate(90deg); }
+        100% { transform: translateX(1.5em) rotate(90deg); }
+    }
     </style>
     
 
