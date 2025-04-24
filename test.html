@@ -16,8 +16,9 @@
     .ticket-wrapper .ticket .home img {width: 100%;}
     .ticket-wrapper .ticket .route {margin: 1em 0; display: flex; justify-content: space-between; align-items: center; font-size: 2.5em; font-weight: 600;}
     .ticket-wrapper .ticket .route .airline {font-size: 1.5em;}
-    .ticket-wrapper .ticket .details {margin-bottom: 0.5em; font-size: 2em;}
-    .ticket-wrapper .ticket .details .label {font-weight: bold;}
+    .ticket-wrapper .ticket .details-wrapper {display: grid; gap: 1.5em;}
+    .ticket-wrapper .ticket .details-wrapper .details {font-size: 2em;}
+    .ticket-wrapper .ticket .details-wrapper .details .label {font-weight: bold;}
     .ticket-wrapper .ticket .barcode {border-top: 0.1em dashed #ccc; margin-top: 2em; padding-top: 1.5em; font-size: 2.5em; font-weight: 600; text-align: center;}
     .ticket-wrapper .ticket .qr {margin-top: 2.5em; text-align: center;}
     .ticket-wrapper .ticket .qr img {width: 16em;}
@@ -43,12 +44,14 @@
                     <span>Our Home</span>
                 </div>
 
-                <div class="details"><span class="label">📅 일시:</span> 4월 29일 (화) 오후 7시 30분</div>
-                <div class="details"><span class="label">🏠 초대장:</span> 동원💖지희 러브하우스에 당신을 초대합니다 💌</div>
-                <div class="details"><span class="label">👕 복장:</span> 술과 음식을 즐길 수 있는 편한 복장 🍻🍗</div>
-                <div class="details"><span class="label">🧃 준비물:</span> 체력 만땅 💪🔥</div>
-                <div class="details"><span class="label">🍬 TMI:</span> 소정의 선물이 있을 예정~! 💌💖</div>
-                
+                <div class="details-wrapper">
+                    <div class="details"><span class="label">📅 일시:</span> 4월 29일 (화) 오후 7시 30분</div>
+                    <div class="details"><span class="label">🏠 초대장:</span> 동원💖지희 러브하우스에 당신을 초대합니다 💌</div>
+                    <div class="details"><span class="label">👕 복장:</span> 술과 음식을 즐길 수 있는 편한 복장 🍻🍗</div>
+                    <div class="details"><span class="label">🧃 준비물:</span> 체력 만땅 💪🔥</div>
+                    <div class="details"><span class="label">🍬 TMI:</span> 소정의 선물이 있을 예정~! 💌💖</div>
+                </div>
+                                
                 <div class="barcode">QR을 찍어보세요</div>
 
                 <!-- qr -->
