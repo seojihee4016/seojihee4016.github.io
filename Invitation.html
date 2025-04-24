@@ -8,7 +8,7 @@
     .ticket-system .top .title {font-weight: 400; font-size: 1.6em; text-align: left; margin-left: 1.25em; margin-bottom: 3.125em; color: #fff;}
     .ticket-system .top .printer {width: 92%; height: 1.5em; border: 0.313em solid #fff; border-radius: 0.625em; box-shadow: 0.063em 0.188em 0.188em rgba(0,0,0,0.2);}
     .receipts-wrapper {overflow: hidden; margin-top: -0.625em; padding-bottom: 0.625em;}
-    .receipts {width: 100%; display: flex; flex-direction: column; align-items: center; transform: translateY(-49.875em); animation: print 2.5s 0.5s forwards;}
+    .receipts {width: 100%; display: flex; flex-direction: column; align-items: center; transform: translateY(-60.875em); animation: print 2.5s 0.5s forwards;}
     .receipt {padding: 3.5em 3em; text-align: left; min-height: 12.5em; width: 88%; background: #fff; border-radius: 0.625em 0.625em 1.25em 1.25em; box-shadow: 0.063em 0.188em 0.5em 0.188em rgba(0,0,0,0.2);}
     .airliner-logo {max-width: 5em;}
     .route {display: flex; justify-content: space-between; align-items: center; margin-bottom: 3.5em;}
@@ -23,19 +23,7 @@
     .description {margin-left: 1.25em;}
     .description h2 {margin: 0 0 0.313em 0; font-weight: 500; font-size: 2em;}
     .description p {margin: 0; font-weight: 400; font-size: 2em;}
-    @keyframes print {
-  0%   { transform: translateY(-52em); }
-  10%  { transform: translateY(-44em); }
-  20%  { transform: translateY(-36em); }
-  30%  { transform: translateY(-30em); }
-  40%  { transform: translateY(-24em); }
-  50%  { transform: translateY(-18em); }
-  60%  { transform: translateY(-12em); }
-  70%  { transform: translateY(-6em); }
-  80%  { transform: translateY(-3em); }
-  100% { transform: translateY(0); }
-}
-
+    @keyframes print {0% {transform: translateY(-50.875em);} 25% {transform: translateY(-31.875em);} 50% {transform: translateY(-24.688em);} 75% {transform: translateY(-8.75em);} 100% {transform: translateY(0);}}
     @media screen and (max-width: 768px) {body {font-size: 0.344em;}}
 
     .plane-icon {
