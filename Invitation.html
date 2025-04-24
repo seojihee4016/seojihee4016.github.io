@@ -1,114 +1,272 @@
 <style>
-    * {box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif;}
-    html, body {height: 100%; margin: 0;}
-    body {background-color: #000; display: flex; justify-content: center; align-items: center; text-align: center; color: #1c1c1c; font-family: 'Ubuntu', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
-    #wrap {width: 818px; display: flex; align-items: center; justify-content: center;}
-    .ticket-system {width: 100%;}
-    .ticket-system .top {display: flex; flex-direction: column; align-items: center;}
-    .ticket-system .top .title {font-weight: 400; font-size: 1.6em; text-align: left; margin-left: 1.25em; margin-bottom: 3.125em; color: #fff;}
-    .ticket-system .top .printer {width: 92%; height: 1.5em; border: 0.313em solid #fff; border-radius: 0.625em; box-shadow: 0.063em 0.188em 0.188em rgba(0,0,0,0.2);}
-    .receipts-wrapper {overflow: hidden; margin-top: -0.625em; padding-bottom: 0.625em;}
-    .receipts {width: 100%; display: flex; flex-direction: column; align-items: center; transform: translateY(-150.875em); animation: print 2.5s 0.5s forwards;}
-    .receipt {padding: 3.5em 3em; text-align: left; min-height: 12.5em; width: 88%; background: #fff; border-radius: 0.625em 0.625em 1.25em 1.25em; box-shadow: 0.063em 0.188em 0.5em 0.188em rgba(0,0,0,0.2);}
-    .airliner-logo {max-width: 5em;}
-    .route {display: flex; justify-content: space-between; align-items: center; margin-bottom: 3.5em;}
-    .route h2 {font-weight: 300; font-size: 3em; font-weight: 500; margin: 0; text-align: center;}
-    .details {display: grid; gap: 1em;}
-    .item {display: flex; gap: 1em; margin-bottom: 2em; flex-direction: column; min-width: 4.375em;}
-    .item span {font-size: 2.3em; color: rgba(28,28,28,0.7); font-weight: 500;}
-    .item span {font-size: 2.2em;}
-    .qr-code {height: 14.875em; min-height: auto; position: relative; border-radius: 1.25em 1.25em 0.625em 0.625em; display: flex; align-items: center;}
-    .qr-code::before {   pointer-events: none; z-index: 1; content: ''; background: linear-gradient(to right, #fff 50%, #3f32e5 50%); background-size: 1.375em 0.25em; position: absolute; top: -0.063em; left: 0; right: 0; margin: auto; height: 0.25em; width: 90%;}
-    .qr {width: 9em; height: 9em;}
-    .description {margin-left: 1.25em;}
-    .description h2 {margin: 0 0 0.313em 0; font-weight: 500; font-size: 2em;}
-    .description p {margin: 0; font-weight: 400; font-size: 2em;}
-    @keyframes print {0% {transform: translateY(-50.875em);} 25% {transform: translateY(-31.875em);} 50% {transform: translateY(-24.688em);} 75% {transform: translateY(-8.75em);} 100% {transform: translateY(0);}}
-    @media screen and (max-width: 768px) {body {font-size: 0.344em;}}
+  * {
+    box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;
+  }
 
-    .plane-icon {
-        width: 4em;
-        height: 4em;
-        transform: rotate(90deg);
-        animation: flyLeftRight 2s ease-in-out infinite alternate;
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #1c1c1c;
+    background-color: #000;
+    font-family: "Ubuntu", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #wrap {
+    width: 818px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ticket-system {
+    width: 100%;
+  }
+  .ticket-system .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  /* 🫶WELCOME TO OUR LOVE HOUSE🫶 */
+  .ticket-system .title {
+    font-size: 3.5em;
+    font-weight: 600;
+    text-align: center;
+    color: #fff;
+  }
+  .ticket-system .top .printer {
+    width: 92%;
+    height: 1.7em;
+    border: 0.3em solid #fff;
+    border-radius: 0.625em;
+    box-shadow: 0.063em 0.188em 0.188em rgba(0, 0, 0, 0.2);
+  }
+  .receipts-wrapper {
+    overflow: hidden;
+    margin-top: -0.625em;
+    padding-bottom: 0.625em;
+  }
+  .receipts {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-78.875em);
+    animation: print 2.5s 0.5s forwards;
+  }
+  .receipt {
+    padding: 5em 3em;
+    text-align: left;
+    width: 88%;
+    min-height: 12.5em;
+    border-radius: 0.625em 0.625em 1.25em 1.25em;
+    background: #fff;
+    box-shadow: 0.063em 0.188em 0.5em 0.188em rgba(0, 0, 0, 0.2);
+  }
+  .route {
+    margin-bottom: 3.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .route h2 {
+    font-size: 4.2em;
+    font-weight: 600;
+    text-align: center;
+  }
+  .details {
+    display: grid;
+    gap: 4em 1em;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .item {
+    display: flex;
+    gap: 1.3em;
+    flex-direction: column;
+    min-width: 4.375em;
+  }
+  .item span {
+
+  }
+  .item .item-main-title {
+    font-size: 3em;
+    font-weight: 600;
+    color: #000;
+  }
+  .item .item-sub-title {
+    font-size: 3em;
+    font-weight: 600;
+    color: rgba(28, 28, 28, 0.7);
+  }
+  .qr-code {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 18em;
+    min-height: auto;
+    border-radius: 1.25em 1.25em 0.625em 0.625em;
+  }
+  .qr-code::before {
+    z-index: 1;
+    content: "";
+    margin: 0 auto;
+    width: 90%;
+    position: absolute;
+    top: -0.06em;
+    left: 0;
+    right: 0;
+    height: 0.25em;
+    background: linear-gradient(to right, #fff 50%, #3f32e5 50%);
+    background-size: 1.375em 0.25em;
+    pointer-events: none;
+  }
+  .qr {
+    width: 11em;
+    height: 11em;
+  }
+  .description {
+    margin-left: 1.25em;
+    font-weight: 600;
+    font-size: 3em;
+  }
+  .description div {
+    margin: 0 0 0.313em 0;
+  }
+  .description p {
+    margin: 0;
+  }
+
+  @keyframes print {
+    0% {
+      transform: translateY(-50.875em);
     }
-
-    @keyframes flyLeftRight {
-        0% { transform: translateX(-1.5em) rotate(90deg); }
-        100% { transform: translateX(1.5em) rotate(90deg); }
+    25% {
+      transform: translateY(-31.875em);
     }
-    </style>
-    
+    50% {
+      transform: translateY(-24.688em);
+    }
+    75% {
+      transform: translateY(-8.75em);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
+  .plane-icon {
+    width: 4em;
+    height: 4em;
+    transform: rotate(90deg);
+    animation: flyLeftRight 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes flyLeftRight {
+    0% {
+      transform: translateX(-1.5em) rotate(90deg);
+    }
+    100% {
+      transform: translateX(1.5em) rotate(90deg);
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    body {
+      font-size: 1.25vw;
+    }
+  }
+</style>
 
 <div id="wrap">
-    <main class="ticket-system">
-        <div class="top">
-            <!-- <h1 class="title">Wait a second, your ticket is being printed</h1> -->
-            <div class="printer"></div>
-        </div>
+  <main class="ticket-system">
+    <h1 class="title">🫶WELCOME TO OUR LOVE HOUSE🫶</h1>
+    <div class="top">
+      <div class="printer"></div>
+    </div>
 
-        <div class="receipts-wrapper">
-            <div class="receipts">
-                <!-- 티켓 본문 -->
-                <div class="receipt">
-                    <!-- 항공사 로고 넣고 싶으면 여기 삽입 -->
-                    <div class="route">
-                        <h2>Your<br>Home</h2>
-                        <svg class="plane-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 510">
-                        <path fill="#3f32e5" d="M497.25 357v-51l-204-127.5V38.25C293.25 17.85 275.4 0 255 0s-38.25 17.85-38.25 38.25V178.5L12.75 306v51l204-63.75V433.5l-51 38.25V510L255 484.5l89.25 25.5v-38.25l-51-38.25V293.25l204 63.75z" />
-                        </svg>
-                        <h2>Our<br>Home</h2>
-                    </div>
+    <div class="receipts-wrapper">
+      <div class="receipts">
+        <div class="receipt">
+          <div class="route">
+            <h2>Your<br />Home</h2>
+            <svg
+              class="plane-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 510 510"
+            >
+              <path
+                fill="#3f32e5"
+                d="M497.25 357v-51l-204-127.5V38.25C293.25 17.85 275.4 0 255 0s-38.25 17.85-38.25 38.25V178.5L12.75 306v51l204-63.75V433.5l-51 38.25V510L255 484.5l89.25 25.5v-38.25l-51-38.25V293.25l204 63.75z"
+              />
+            </svg>
+            <h2>Our<br />Home</h2>
+          </div>
 
-                    <div class="details">
-                        <div class="item">
-                            <span>🧑‍✈️ Passenger</span>
-                            <span>상구햄</span>
-                        </div>
-
-                        <div class="item">
-                            <span>🏠 Love House 💖</span>
-                            <span>자양로 55, 자양하늘채베르 102동 703호</span>
-                        </div>
-
-                        <div class="item">
-                            <span>📅 Date & Time</span>
-                            <span>04/29/2025 19:30</span>
-                        </div>
-
-                        <div class="item">
-                            <span>🧃 Checklist</span>
-                            <span>체력 만땅 💪🔥</span>
-                        </div>
-
-                        <div class="item">
-                            <span>👕 Outfit</span>
-                            <span>술과 음식을 즐길 수 있는 편한 복장 🍻🍗</span>
-                        </div>
-
-                        <div class="item">
-                            <span>🍬 TMI</span>
-                            <span>소정의 선물이 있을 예정~! 💌💖</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- QR 코드 부분 -->
-                <div class="receipt qr-code">
-                    <div class="qr">
-                <a href="https://seojihee4016.github.io/KakaoTalk_20250424_200202139.jpg" target="_blank">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://seojihee4016.github.io/KakaoTalk_20250424_200202139.jpg" alt="QR Code" style="width: 100%; height: auto;">
-                        </a>
-                    </div>
-                    <div class="description">
-                        <h2>📷 QR을 찍어보세용</h2>
-                        <p>👆 눌러서 확인도 가능합니당</p>
-                    </div>
-                </div>
+          <div class="details">
+            <div class="item">
+              <span class="item-main-title">🧑‍✈️ Passenger</span>
+              <span class="item-sub-title">허상훈, 강동형,<br> 허다은, 하진용</span>
             </div>
+
+            <div class="item">
+              <span class="item-main-title">📅 Date & Time</span>
+              <span class="item-sub-title">04/29/2025 19:30</span>
+            </div>
+
+            <div class="item">
+              <span class="item-main-title">🧃 Checklist</span>
+              <span class="item-sub-title">체력 만땅 💪🔥</span>
+            </div>
+
+            <div class="item">
+              <span class="item-main-title">👕 Outfit</span>
+              <span class="item-sub-title">편한 복장 🍻🍗</span>
+            </div>
+
+            <div class="item">
+              <span class="item-main-title">🏠 Love House 💖</span>
+              <span class="item-sub-title">자양하늘채베르<br>102동 703호</span>
+            </div>
+
+            <div class="item">
+              <span class="item-main-title">🍬 TMI</span>
+              <span class="item-sub-title">소정의 선물이<br>있을 예정~! 💌</span>
+            </div>
+          </div>
         </div>
-    </main>
+
+        <!-- QR 코드 부분 -->
+        <div class="receipt qr-code">
+          <div class="qr">
+            <a
+              href="https://seojihee4016.github.io/KakaoTalk_20250424_200202139.jpg"
+              target="_blank"
+            >
+              <img
+                src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://seojihee4016.github.io/KakaoTalk_20250424_200202139.jpg"
+                alt="QR Code"
+                style="width: 100%; height: auto"
+              />
+            </a>
+          </div>
+          <div class="description">
+            <div>📷 QR을 찍어보세용</div>
+            <p>👆 눌러서 확인도 가능합니당</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 </div>
 
 <script>
