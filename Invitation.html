@@ -68,7 +68,7 @@
     padding: 5em 3em;
     text-align: left;
     width: 88%;
-    min-height: 12.5em;
+    min-height: 10.5em;
     border-radius: 0.625em 0.625em 1.25em 1.25em;
     background: #fff;
     box-shadow: 0.063em 0.188em 0.5em 0.188em rgba(0, 0, 0, 0.2);
@@ -148,16 +148,25 @@
 
   @keyframes print {
     0% {
-      transform: translateY(-50.875em);
+      transform: translateY(-60.875em);
     }
-    25% {
-      transform: translateY(-31.875em);
+    15% {
+      transform: translateY(-58.875em);
     }
-    50% {
-      transform: translateY(-24.688em);
+    30% {
+      transform: translateY(-55.688em);
+    }
+    45% {
+      transform: translateY(-40.75em);
+    }
+    60% {
+      transform: translateY(-30.75em);
     }
     75% {
-      transform: translateY(-8.75em);
+      transform: translateY(-20.75em);
+    }
+    90% {
+      transform: translateY(-10.75em);
     }
     100% {
       transform: translateY(0);
@@ -165,8 +174,8 @@
   }
 
   .plane-icon {
-    width: 4em;
-    height: 4em;
+    width: 5em;
+    height: 5em;
     transform: rotate(90deg);
     animation: flyLeftRight 2s ease-in-out infinite alternate;
   }
