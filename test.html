@@ -1,38 +1,69 @@
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-<a href="http://kauth.kakao.com/oauth/authorize?client_id=65295b9472b38097d11e3a81dd2b5983&redirect_uri=https://seojihee4016.github.io/test.html&response_type=code"><img src="kakao_login-png"></a>
+    body {overflow: hidden; height: 100vh; display: flex; align-items: center; justify-content: center; font-size: 10px; background: #1a1a2e; font-family: 'Roboto', sans-serif;}
 
-<div class="formGroup">
-    <div class="table_box rowBorder">
-        <table>
-            <tr>
-                <th><img src="//static.metamarketing.co.kr/label/name_01.png"></th> 
-                <td><input type="text" name="name" class="inp" required autocomplete="off"/></td>
-            </tr>
-            <tr>
-                <th><img src="//static.metamarketing.co.kr/label/age.png"></th> 
-                <td><input type="tel" name="age" class="inp" data-min="<?=$this->landing['check_age_min']?>" data-max="<?=$this->landing['check_age_max']?>" required autocomplete="off" maxlength="2"/></td>
-            </tr>
-            <tr>
-                <th><img src="//static.metamarketing.co.kr/label/phone_01.png"></th> 
-                <td><input type="tel" name="phone" class="inp" required autocomplete="off" maxlength="11"/></td>
-            </tr>
-        </table>
+    #wrap {}
+
+    .content-wrapper {margin: 0 auto; position: relative; width: 60em;}
+
+
+    .printer-slot {z-index: 2; padding: 0.5em; position: relative; width: 60em; height: 3em;  border-radius: 1em; box-shadow: 0 0 10px #3c00ff; background: #3c00ff;}
+
+    .ticket-wrapper {z-index: 1; overflow: hidden; position: relative;}
+    .ticket-wrapper .ticket {padding: 4em 2em; width: 60em; transform: translateY(-100%); border-radius: 1em; background: #fff; box-shadow: 0 10px 15px rgba(0,0,0,0.3);}
+    .ticket-wrapper .ticket .home {margin: 1em 0; width: 3em;}
+    .ticket-wrapper .ticket .route {margin: 1em 0; display: flex; justify-content: space-between; align-items: center; font-size: 2.5em; font-weight: 600;}
+    .ticket-wrapper .ticket .route .airline {font-size: 1.5em;}
+    .ticket-wrapper .ticket .details {margin-bottom: 0.5em; font-size: 2.2em;}
+    .ticket-wrapper .ticket .details .label {font-weight: bold;}
+    .ticket-wrapper .ticket .barcode {border-top: 0.1em dashed #ccc; margin-top: 2em; padding-top: 1.5em; font-size: 1.5em; font-weight: 700; text-align: center;}
+    .ticket-wrapper .ticket .qr {margin-top: 2.5em;text-align: center;}
+    .ticket-wrapper .ticket .qr img {width: 8em;}
+
+    @media screen and (max-width: 768px){
+        body {font-size: 1.25vw;}
+    }
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+<div id="wrap">
+    <div class="content-wrapper">
+        <div class="printer-slot"></div>
+        <div class="ticket-wrapper">
+            <div class="ticket">
+                <div class="home img-area"><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png"></div>
+
+                <!-- route -->
+                <div class="route">
+                    <span>Your Home</span>
+                    <span class="airline">✈</span>
+                    <span>Our Home</span>
+                </div>
+
+                <div class="details"><span class="label">📅 일시:</span> 4월 29일 (화) 오후 7시 30분</div>
+                <div class="details"><span class="label">🏠 초대장:</span> 러브하우스에 당신을 초대합니다 💌</div>
+                <div class="details"><span class="label">👙 복장:</span>  🍑</div>
+                <div class="details"><span class="label">🎁 준비물:</span>  👜</div>
+                
+                <div class="barcode">QR을 찍어보세요</div>
+
+                <!-- qr -->
+                <div class="qr">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://seojihee4016.github.io/test.jpg" alt="QR Code">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script>
-	const kakaoData = {
-		client_id: '65295b9472b38097d11e3a81dd2b5983',
-		client_secret: 'kwHBQN8u6A93vNLbD1wqIlFctRHVvpz9',
-		redirect_uri: 'https://seojihee4016.github.io/hairSalonProject/signUp.html'
-	};
-
-	// Assuming you're using Express.js for the server-side
-	const express = require('express');
-	const app = express();
-
-	app.get('/kakao/login', (req, res) => {
-		const kakaoAuthorize = `http://kauth.kakao.com/oauth/authorize?client_id=65295b9472b38097d11e3a81dd2b5983&redirect_uri=https://seojihee4016.github.io/test.html&response_type=code`;
-		res.redirect(kakaoAuthorize);
-	});
+    gsap.to(".ticket", {
+        y: 0,
+        duration: 1.8,
+        ease: "power2.out",
+        delay: 0.5
+    });
 </script>
