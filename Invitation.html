@@ -1,0 +1,111 @@
+<style>
+    * {box-sizing: border-box; font-family: 'Noto Sans KR', sans-serif;}
+    html, body {height: 100%; margin: 0;}
+    body {background-color: #000; display: flex; justify-content: center; align-items: center; text-align: center; color: #1c1c1c; font-family: 'Ubuntu', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+    #wrap {display: flex; align-items: center; justify-content: center;}
+    .ticket-system {width: 80%;}
+    .ticket-system .top {display: flex; flex-direction: column; align-items: center;}
+    .ticket-system .top .title {font-weight: 400; font-size: 1.6em; text-align: left; margin-left: 1.25em; margin-bottom: 3.125em; color: #fff;}
+    .ticket-system .top .printer {width: 92%; height: 1.25em; border: 0.313em solid #fff; border-radius: 0.625em; box-shadow: 0.063em 0.188em 0.188em rgba(0,0,0,0.2);}
+    .receipts-wrapper {overflow: hidden; margin-top: -0.625em; padding-bottom: 0.625em;}
+    .receipts {width: 100%; display: flex; flex-direction: column; align-items: center; transform: translateY(-49.875em); animation: print 2.5s 0.5s forwards;}
+    .receipt {padding: 3.5em 1.8em; text-align: left; min-height: 12.5em; width: 88%; background: #fff; border-radius: 0.625em 0.625em 1.25em 1.25em; box-shadow: 0.063em 0.188em 0.5em 0.188em rgba(0,0,0,0.2);}
+    .airliner-logo {max-width: 5em;}
+    .route {display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.875em;}
+    .plane-icon {width: 3em; height: 3em; transform: rotate(90deg);}
+    .route h2 {font-weight: 300; font-size: 2em; font-weight: 500; margin: 0; text-align: center;}
+    .details {display: grid; gap: 1em;}
+    .item {display: flex; flex-direction: column; min-width: 4.375em;}
+    .item span {font-size: 1.2em; color: rgba(28,28,28,0.7); font-weight: 500;}
+    .item h3 {font-size: 1.2em;}
+    .qr-code {height: 6.875em; min-height: auto; position: relative; border-radius: 1.25em 1.25em 0.625em 0.625em; display: flex; align-items: center;}
+    .qr-code::before {content: ''; background: linear-gradient(to right, #fff 50%, #3f32e5 50%); background-size: 1.375em 0.25em; position: absolute; top: -0.063em; left: 0; right: 0; margin: auto; height: 0.25em; width: 90%;}
+    .qr {width: 4.375em; height: 4.375em;}
+    .description {margin-left: 1.25em;}
+    .description h2 {margin: 0 0 0.313em 0; font-weight: 500;}
+    .description p {margin: 0; font-weight: 400;}
+    @keyframes print {0% {transform: translateY(-50.875em);} 25% {transform: translateY(-31.875em);} 50% {transform: translateY(-24.688em);} 75% {transform: translateY(-8.75em);} 100% {transform: translateY(0);}}
+    @media screen and (max-width: 48em) {body {font-size: 0.344em;}}
+    </style>
+    
+
+
+<div id="wrap">
+    <main class="ticket-system">
+        <div class="top">
+            <!-- <h1 class="title">Wait a second, your ticket is being printed</h1> -->
+            <div class="printer"></div>
+        </div>
+
+        <div class="receipts-wrapper">
+            <div class="receipts">
+                <!-- 티켓 본문 -->
+                <div class="receipt">
+
+                    <!-- 항공사 로고 넣고 싶으면 여기 삽입 -->
+                    <!-- <div class="route">
+                        <h2>Your<br>Home</h2>
+                        <svg class="plane-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 510">
+                        <path fill="#3f32e5" d="M497.25 357v-51l-204-127.5V38.25C293.25 17.85 275.4 0 255 0s-38.25 17.85-38.25 38.25V178.5L12.75 306v51l204-63.75V433.5l-51 38.25V510L255 484.5l89.25 25.5v-38.25l-51-38.25V293.25l204 63.75z" />
+                        </svg>
+                        <h2>Our<br>Home</h2>
+                    </div> -->
+
+                    <div class="details">
+                        <div class="item">
+                            <span>🧑‍✈️ Passenger</span>
+                            <h3>상구햄</h3>
+                        </div>
+
+                        <div class="item">
+                            <span>✈️ Flight No.</span>
+                            <h3>05056</h3>
+                        </div>
+
+                        <div class="item">
+                            <span>🏠 Destination 💖</span>
+                            <h3>러브하우스 (자양로 55 102동 703호)</h3>
+                        </div>
+
+                        <div class="item">
+                            <span>📅 Date & Time</span>
+                            <h3>04/29/2025 19:30</h3>
+                        </div>
+
+                        <div class="item">
+                            <span>🧃 Checklist</span>
+                            <h3>체력 만땅 💪🔥</h3>
+                        </div>
+
+                        <div class="item">
+                            <span>👕 Outfit</span>
+                            <h3>술과 음식을 즐길 수 있는 편한 복장 🍻🍗</h3>
+                        </div>
+
+                        <div class="item">
+                            <span>🍬 TMI</span>
+                            <h3>소정의 선물이 있을 예정~! 💌💖</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QR 코드 부분 -->
+                <div class="receipt qr-code">
+                    <div class="qr">
+                        <!-- <a href="https://seojihee4016.github.io/test.jpg" target="_blank"> -->
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://seojihee4016.github.io/test.jpg" alt="QR Code" style="width: 100%; height: auto;">
+                        <!-- </a> -->
+                    </div>
+                    <div class="description">
+                        <h2>📷 QR 확인</h2>
+                        <p>👆 눌러서 확인해보세요!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+
+</script>
